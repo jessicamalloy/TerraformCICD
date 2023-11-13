@@ -33,7 +33,7 @@ jobs:
           dotnet-version: 6.0.x
           source-url: https://nuget.pkg.github.com/AllenInstitute/index.json
         env:
-          NUGET_AUTH_TOKEN: ${{ secrets.MODULE_TOKEN }}
+          NUGET_AUTH_TOKEN: ${{ secrets.AI_PACKAGES_TOKEN }}
 
       - name: Restore Dependencies from Cache
         uses: actions/cache@v3

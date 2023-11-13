@@ -35,8 +35,8 @@ jobs:
               id: init
               run: |
                 aws s3 cp --recursive s3://${AWS_S3_BUCKET}/service .
-                git config --global url."https://git:${MODULE_TOKEN}@github.com/AllenInstitute".insteadOf "https://github.com/AllenInstitute"
-                git config --global url."https://${MODULE_TOKEN}:x-oauth-basic@github.com/AllenInstitute".insteadOf ssh://git@github.com/AllenInstitute
+                git config --global url."https://git:${MODULE_TOKEN}@github.com/jessicamalloy".insteadOf "https://github.com/jessicamalloy"
+                git config --global url."https://${MODULE_TOKEN}:x-oauth-basic@github.com/jessicamalloy".insteadOf ssh://git@github.com/jessicamalloy
                 terraform init --backend-config="backend.config"
               env:
                 AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
