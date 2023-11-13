@@ -31,6 +31,12 @@ variable "github_username" {
   type        = string
 }
 
+variable "github_owner" {
+  description = "GitHub repo owner."
+  type        = string
+  default     = "AllenInstitute"
+}
+
 variable "github_oauth_token" {
   description = "OAuth token allowing access to repository."
   type        = string

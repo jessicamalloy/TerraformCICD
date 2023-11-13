@@ -12,6 +12,7 @@ module "terraform_cicd_config_bucket" {
 module "terraform_cicd_codepipeline" {
   source = "./cicd-codepipeline"
   project_name        = var.project_name
+  github_owner        = var.github_owner
   github_oauth_token  = var.github_oauth_token
   github_repo         = local.github_project_name
   github_branch       = var.github_branch

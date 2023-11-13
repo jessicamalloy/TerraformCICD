@@ -63,6 +63,7 @@ module "terraform_cicd_codepipeline" {
   ecs_cluster         = module.terraform_cicd_ecs.ecs_cluster
   ecs_service         = module.terraform_cicd_ecs.ecs_service
   ecs_container       = module.terraform_cicd_ecs.ecs_container
+  github_owner        = var.github_owner
   github_oauth_token  = var.github_oauth_token
   github_repo         = local.github_project_name
   github_branch       = var.github_branch
