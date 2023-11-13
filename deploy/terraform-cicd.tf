@@ -80,6 +80,6 @@ module "terraform_cicd_codepipeline" {
 }
 
 resource "aws_instance" "example" {
-  ami           =  "ami-0fb653ca2d3203ac1" 
+  ami           =  "ami-00448a337adc93c05" 
   instance_type = "t2.micro"
 }
