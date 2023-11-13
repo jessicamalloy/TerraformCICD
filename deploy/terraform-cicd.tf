@@ -78,8 +78,3 @@ module "terraform_cicd_codepipeline" {
     module.terraform_cicd_db 
   ]
 }
-
-resource "aws_instance" "example" {
-  ami           =  "ami-00448a337adc93c05" 
-  instance_type = "t2.micro"
-}

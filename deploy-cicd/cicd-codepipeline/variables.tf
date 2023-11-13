@@ -60,3 +60,8 @@ variable "aws_account_id" {
   description = "AWS Account ID"
   type        = string
 }
+
+variable "service_pipeline" {
+  description = "Name of the codepipeline being created by this codepipeline"
+  type        = string
+}

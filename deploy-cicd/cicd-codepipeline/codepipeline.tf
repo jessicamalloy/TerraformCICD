@@ -148,6 +148,11 @@ resource "aws_codepipeline" "codepipeline" {
           name = "PROJECT_NAME"
           value = "${var.project_name}"
           type = "PLAINTEXT"
+        },
+        {
+          name = "SERVICE_PIPELINE"
+          value = "${var.service_pipeline}"
+          type = "PLAINTEXT"
         }])
       }
     }

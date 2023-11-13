@@ -1,5 +1,5 @@
 resource "aws_iam_role" "codepipeline_role" {
-  name = "${var.project_name}-parent-codepipeline-service-role"
+  name = "${var.project_name}-cicd-codepipeline-service-role"
 
   assume_role_policy = <<EOF
 {
@@ -18,7 +18,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "codepipeline_policy" {
-  name = "${var.project_name}-parent-codepipeline-service-policy"
+  name = "${var.project_name}-cicd-codepipeline-service-policy"
   role = aws_iam_role.codepipeline_role.id
 
   policy = <<EOF
@@ -88,7 +88,8 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
         "s3:GetObjectVersion",
         "states:DescribeStateMachine",
         "states:DescribeExecution",
-        "states:StartExecution"
+        "states:StartExecution",
+        "sts:AssumeRole"
       ],
       "Resource": [
         "*"

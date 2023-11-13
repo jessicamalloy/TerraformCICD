@@ -65,4 +65,7 @@ variable "environment" {
   default = "sandbox"
 }
 
-
+variable "service_pipeline" {
+  description = "Name of the codepipeline being created by this codepipeline"
+  type        = string
+}

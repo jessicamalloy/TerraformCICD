@@ -21,6 +21,7 @@ module "terraform_cicd_codepipeline" {
   backend_config_dynamodb_table = var.dynamodb_table
   backend_config_bucket = var.bucket
   aws_account_id = var.aws_account_id
+  service_pipeline = var.service_pipeline
 
   depends_on = [ module.terraform_cicd_config_bucket ]
 }

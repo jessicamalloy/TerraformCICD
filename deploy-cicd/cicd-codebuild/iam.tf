@@ -65,6 +65,7 @@ resource "aws_iam_role_policy" "codebuild_service_policy" {
         "codepipeline:CreatePipeline",
         "codepipeline:DeletePipeline",
         "codepipeline:UpdatePipeline",
+        "codepipeline:StartPipelineExecution",
         "codepipeline:Get*",
         "codepipeline:TagResource",
         "codepipeline:List*",

@@ -19,3 +19,7 @@ phases:
   build:
     commands:
       - "terraform apply $PROJECT_NAME-terraform.tfplan"
+
+  post_build:
+    commands:
+      - aws codepipeline start-pipeline-execution --name $SERVICE_PIPELINE
