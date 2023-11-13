@@ -46,13 +46,3 @@ resource "aws_s3_object" "service-variables-file" {
 
   depends_on = [ aws_s3_bucket.terraform_config_bucket ]
 }
-
-resource "aws_s3_object" "github-actions-tfplan" {
-  bucket = aws_s3_bucket.terraform_config_bucket.bucket
-  key    = "terraform-plan.yml"
-  content = local.github-actions-tfplan
-
-  etag = sha256(local.github-actions-tfplan)
-  depends_on = [ aws_s3_bucket.terraform_config_bucket ]
-
-}
