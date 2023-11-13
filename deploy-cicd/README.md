@@ -35,7 +35,7 @@ Note: all commands in this section should be run from the `deploy-cicd/` directo
 
 ### Destroying
 
-When you're done with an environment, run the following command: `terraform apply -destroy -var-file="environments/<your_env>/variables.tfvars -var-file="environments/<your_env>/backend.config"`
+When you're done with an environment, run the following command: `terraform apply -destroy -var-file="environments/<your_env>/variables.tfvars -var-file="environments/<your_env>/backend.config"`. You will need to destroy the service Terraform separately by running `terraform apply -destroy -var-file="environments/<your_env>/variables.tfvars` (make sure to re-run the `init` command first!)
 
 
 ## Major components
@@ -51,6 +51,5 @@ The `deploy-cicd` Terraform has 2 major components:
 - This demo uses a copied-over `platform-terraform-modules@v1.0.0`, with 2 differences:
   - the `ecs-codepipeline-core` pipeline has source config updated to include this flag: `PollForSourceChanges = false`. This is so that the pipeline gets triggered by the cicd pipeline, rather than changes in the repo. Updating the source block for the codepipelines that use CodeStar Connections so that they don't pull automatically from the repo might be different.
   - `ecs-codepipeline` module passes `github_owner` to `ecs-codepipeline-core`, since this repo isn't owned by the Allen Institute (this shouldn't matter for updating Platform team repos)
-
-
+- The pipeline sometimes fails due to insufficient permissions - check the codebuild logs and if this is the case, add whatever permission is in the error to the codebuild service policy in `codebuild/iam.tf`
 

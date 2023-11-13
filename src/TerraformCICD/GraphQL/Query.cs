@@ -4,7 +4,6 @@
 
 namespace TerraformCICD.GraphQL;
 
-using AllenInstitute.Platform.Security.Authorization;
 using TerraformCICD.GraphQL.Resolvers;
 using TerraformCICD.GraphQL.Types;
 
@@ -31,7 +30,6 @@ public class Query : ObjectType
             .UsePaging()
             .UseProjection()
             .UseFiltering()
-            .UseSorting()
-            .Authorize(nameof(AuthorizationPolicy.Read));
+            .UseSorting();
     }
 }
