@@ -56,7 +56,7 @@ module "terraform_cicd_ecs" {
 }
 
 module "terraform_cicd_codepipeline" {
-  source = "github.com/AllenInstitute/platform-terraform-modules//ecs-codepipeline?ref=v1.0.0"
+  source = "github.com/jessicamalloy/terraform-modules//ecs-codepipeline"
   project_name        = var.project_name
   aws_account_id      = var.aws_account_id
   region              = var.region
