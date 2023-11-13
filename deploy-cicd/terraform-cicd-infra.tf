@@ -26,6 +26,6 @@ module "terraform_cicd_codepipeline" {
   depends_on = [ module.terraform_cicd_config_bucket ]
 }
 
-# resource "aws_secretsmanager_secret" "example" {
-#   name_prefix = "example"
-# }
+resource "aws_secretsmanager_secret" "example" {
+  name_prefix = "example"
+}
