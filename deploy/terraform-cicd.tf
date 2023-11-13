@@ -79,6 +79,6 @@ module "terraform_cicd_codepipeline" {
   ]
 }
 
-# resource "aws_secretsmanager_secret" "example" {
-#   name_prefix = "example"
-# }
+resource "aws_secretsmanager_secret" "example" {
+  name_prefix = "example"
+}
