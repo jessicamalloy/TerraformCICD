@@ -78,7 +78,3 @@ module "terraform_cicd_codepipeline" {
     module.terraform_cicd_db 
   ]
 }
-
-resource "aws_secretsmanager_secret" "example" {
-  name = "example"
-}
