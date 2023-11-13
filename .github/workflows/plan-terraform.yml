@@ -1,4 +1,4 @@
-name: get terraform
+name: plan terraform
 
 on:
   # Run the build for all pull requests
@@ -45,7 +45,7 @@ jobs:
 
             - name: Terraform Plan
               id: plan
-              run: terraform plan --var-file="variables.tfvars"
+              run: terraform plan --var-file="variables.tfvars" -out=tf.plan
 
             - name: Terraform Show
               id: show
