@@ -1,0 +1,13 @@
+{
+  "defaultUserId": "2446f649-05ae-46c1-a0b8-ba88afd3c513",
+  "users": [
+    {
+      "id": "2446f649-05ae-46c1-a0b8-ba88afd3c513",
+      "name": "Platform Dev",
+      "roles": [
+        "Administrator"
+      ],
+      "token": "ey2446f64905ae46c1a0b8ba88afd3c513"
+    }
+  ]
+}

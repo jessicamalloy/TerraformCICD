@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - "curl -s https://releases.hashicorp.com/terraform/1.3.6/terraform_1.3.6_linux_amd64.zip -o terraform.zip"
+      - "unzip terraform.zip -d /usr/local/bin"
+      - "chmod 755 /usr/local/bin/terraform"
+
+  pre_build:
+    commands:
+      - "cd deploy"
+      - "aws s3 cp s3://$VARIABLE_BUCKET/service/backend.config backend.config"
+      - "mv $CODEBUILD_SRC_DIR_plan_output/$PROJECT_NAME-terraform.tfplan ."
+      - "git config --global user.name $GITHUB_USERNAME"
+      - git config --global url."https://oauth2:$GITHUB_TOKEN@github.com".insteadOf https://github.com
+      - "terraform init -backend-config=backend.config"
+
+  build:
+    commands:
+      - "terraform apply $PROJECT_NAME-terraform.tfplan"

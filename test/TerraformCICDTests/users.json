@@ -1,0 +1,53 @@
+{
+  "defaultUserId": "345ab030-0dde-48bd-a330-154c3c5782e6",
+  "users": [
+    {
+      "id": "345ab030-0dde-48bd-a330-154c3c5782e6",
+      "name": "Platform Test",
+      "roles": [
+        "Administrator"
+      ],
+      "token": "ey345ab0300dde48bda330154c3c5782e6"
+    },
+    {
+      "id": "7f6079a6-8c82-4756-9f7a-2b8676266ebe",
+      "name": "Test System",
+      "roles": [
+        "Administrator"
+      ],
+      "token": "ey345ab0300dde48bda330154c3c6jn53"
+    },
+    {
+      "id": "233d41ee-906a-4aec-8df8-d0aad29c413a",
+      "name": "Stephen Hawking",
+      "roles": [
+        "Administrator"
+      ],
+      "token": "ey233d41ee906a4aec8df8d0aad29c413a"
+    },
+    {
+      "id": "6c515f5d-f976-4800-97bd-1cf59c3bbbd5",
+      "name": "Rosalind Franklin",
+      "roles": [
+        "PowerUser"
+      ],
+      "token": "ey6c515f5df976480097bd1cf59c3bbbd5"
+    },
+    {
+      "id": "fdacacb9-5478-49e3-9db4-197f26b2fee1",
+      "name": "Albert Einstein",
+      "roles": [
+        "ReadWrite"
+      ],
+      "token": "eyfdacacb9547849e39db4197f26b2fee1"
+    },
+    {
+      "id": "6b27d766-10e1-4904-b9ca-535b64d838a2",
+      "name": "Marie Curie",
+      "roles": [
+        "ReadOnly"
+      ],
+      "token": "ey6b27d76610e14904b9ca535b64d838a2"
+    }
+  ]
+}
