@@ -1,11 +1,11 @@
 module "terraform_cicd_vpc" {
-  source = "github.com/AllenInstitute/platform-terraform-modules//vpc?ref=v1.0.0"
+  source = "github.com/jessicamalloy/terraform-modules//vpc"
   project_name       = var.project_name
   create_private_subnets = false
 }
 
 module "terraform_cicd_db" {
-  source = "github.com/AllenInstitute/platform-terraform-modules//rds?ref=v1.0.0"
+  source = "github.com/jessicamalloy/terraform-modules//rds"
   project_name       = var.project_name
   database_name      = var.database_name
   database_username  = var.database_username
@@ -15,7 +15,7 @@ module "terraform_cicd_db" {
 }
 
 module "terraform_cicd_ecs" {
-  source = "github.com/AllenInstitute/platform-terraform-modules//ecs?ref=v1.0.0"
+  source = "github.com/jessicamalloy/terraform-modules//ecs"
   project_name       = var.project_name
   domain_name        = var.domain_name
   aws_account_id     = var.aws_account_id
