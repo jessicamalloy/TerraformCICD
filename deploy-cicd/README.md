@@ -2,10 +2,19 @@
 
 This service provides an example of how an automated Terraform deployment can be set up and run in AWS. It consists of two sets of Terraform files:
 
-- **Service Terraform:** This works the same as all of our other services' pipelines, where it builds the service and deploys it. The Terraform consists of the database, VPC, etc. This Terraform exists in the `deploy/` directory and can be deployed independently, similar to our other services.
-- **CICD Terraform:** These files create a pipeline on AWS that runs the terraform commands - `init`, `plan`, and `apply` - that deploy the service Terraform. The CICD Terraform exists in the `deploy-cicd` directory.
+- **Service Terraform:** 
+  - Terraform deploys the actual service, e.g., RDS, ECS, VPC, etc.
+  - Generated via dotnet-graphql-template, should resemble other dotnet services
+  - Deployed manually or automatically via CICD pipeline
+  - Located in the `deploy/` directory
 
-This README will walk through how to deploy the pipeline and the major components of the architecture.
+- **CICD Terraform:**
+  - These files create a pipeline on AWS that runs the terraform commands - `init`, `plan`, and `apply` - that deploy the service Terraform
+  - Deployed manually only
+  - Located in `deploy-cicd/` directory
+  
+
+This README will walk through how to deploy the CICD Terraform and the major components of the architecture.
 
 ## Deployment
 
