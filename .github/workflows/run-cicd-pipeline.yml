@@ -1,4 +1,4 @@
-name: run service pipeline
+name: run cicd pipeline
 
 on:
   push:
