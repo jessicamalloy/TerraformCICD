@@ -1,0 +1,35 @@
+name: run service pipeline
+
+on:
+  push:
+    branches:
+      - main
+    # except for infrastructure changes
+    paths-ignore:
+      - 'deploy/**'
+
+permissions:
+  contents: read
+  id-token: write # AWS auth
+
+jobs:
+    plan:
+        name: Run service pipeline
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Configure AWS Credentials
+              uses: aws-actions/configure-aws-credentials@v2
+              with:
+                  role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHubAction-AssumeRoleWithAction
+                  aws-region: us-west-2
+
+            - name: Start pipeline
+              run: |
+                aws codepipeline start-pipeline-execution --name $SERVICE_PIPELINE
+              env:
+                SERVICE_PIPELINE: ${{ secrets.SERVICE_CODEPIPELINE }}
+              shell: sh
